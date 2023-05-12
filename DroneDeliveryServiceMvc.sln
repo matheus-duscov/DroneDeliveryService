@@ -5,7 +5,13 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDeliveryServiceMvc", "DroneDeliveryServiceMvc\DroneDeliveryServiceMvc.csproj", "{6D3A78CA-EE29-4B25-950C-74FD21C411A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneDeliveryServiceMvc.Test", "DroneDeliveryServiceMvc.Test\DroneDeliveryServiceMvc.Test.csproj", "{B016AAFF-2683-4516-9632-0860545C1B17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDeliveryServiceMvc.Test", "DroneDeliveryServiceMvc.Test\DroneDeliveryServiceMvc.Test.csproj", "{B016AAFF-2683-4516-9632-0860545C1B17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5640949-B246-425D-AC0F-55695DBEB1E2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
