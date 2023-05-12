@@ -1,0 +1,54 @@
+﻿@model List<Trip>
+@{
+    ViewData["Title"] = "Home Page";
+    var listTríp = Model;
+}
+
+<p>Please upload a text file with the following layout:</p>
+<br />
+<p>Line 1: [Drone #1 Name], [#1 Maximum Weight], [Drone #2 Name], [#2 Maximum Weight], etc.</p>
+<p>Line 2: [Location #1 Name], [Location #1 Package Weight]</p>
+<p>Line 3: [Location #2 Name], [Location #2 Package Weight]</p>
+<p>etc.</p>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload File</button>
+</form>
+<hr />
+
+@if(Model != null && Model.Count > 0)
+{
+<div class="alert" style="margin-top:20px">
+    <h3>Drone Trip Result: </h3>
+    <table>
+        @foreach (Trip item in Model.OrderBy(x => x.Drone.Name).ThenBy(x => x.Id))
+        {
+            if (item.Id == 1)
+            {
+                @:<tr><td><b>@item.Drone.Name</b></td></tr>
+            }
+            @:<tr><td><b>Trip #@item.Id</b></td></tr>
+            @:<tr><td>
+            for (int i = 0; i <= item.Locations.Count - 1; i++)
+            {
+                if (i != item.Locations.Count - 1)
+                {
+                    @(item.Locations[i].Name + ", ")
+                }
+                else
+                {
+                    @(item.Locations[i].Name) 
+                }
+            }
+            @:</td></tr>
+
+        }
+    </table>
+</div>    
+}
+
+@if(ViewBag.Message != null)
+{
+    @:<b>@ViewBag.Message</b>
+}
